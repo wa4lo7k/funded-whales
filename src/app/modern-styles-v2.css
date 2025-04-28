@@ -1,0 +1,299 @@
+/* Modern Styles CSS - Version 2 */
+
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Global variables */
+:root {
+  /* Gradient variations - Violet/Pink */
+  --gradient-violet-pink: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  --gradient-violet-pink-soft: linear-gradient(135deg, rgba(139, 92, 246, 0.8) 0%, rgba(236, 72, 153, 0.8) 100%);
+  --gradient-violet-pink-text: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
+  
+  /* Gradient variations - Blue/Cyan */
+  --gradient-blue-cyan: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  --gradient-blue-cyan-soft: linear-gradient(135deg, rgba(59, 130, 246, 0.8) 0%, rgba(6, 182, 212, 0.8) 100%);
+  --gradient-blue-cyan-text: linear-gradient(135deg, #60a5fa 0%, #22d3ee 100%);
+  
+  /* Gradient variations - Emerald/Lime */
+  --gradient-emerald-lime: linear-gradient(135deg, #10b981 0%, #84cc16 100%);
+  --gradient-emerald-lime-soft: linear-gradient(135deg, rgba(16, 185, 129, 0.8) 0%, rgba(132, 204, 22, 0.8) 100%);
+  --gradient-emerald-lime-text: linear-gradient(135deg, #34d399 0%, #a3e635 100%);
+  
+  /* Background gradients */
+  --bg-gradient-light: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+  --bg-gradient-dark: linear-gradient(135deg, #0f172a 0%, #0c4a6e 100%);
+  
+  /* Glassmorphism variables */
+  --glass-bg-light: rgba(255, 255, 255, 0.2);
+  --glass-bg-dark: rgba(15, 23, 42, 0.3);
+  --glass-border-light: rgba(255, 255, 255, 0.25);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+  --glass-shadow-light: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --glass-shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --glass-blur: 16px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 28px rgba(0, 0, 0, 0.2);
+  
+  /* Animation durations */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+}
+
+/* Font configurations */
+.font-inter-v2 {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-poppins-v2 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-sora-v2 {
+  font-family: 'Sora', sans-serif;
+}
+
+.font-roboto-v2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Typography styles */
+.modern-typography-v2 h1 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.modern-typography-v2 h2 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.modern-typography-v2 h3 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.modern-typography-v2 p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.modern-typography-v2 strong {
+  font-weight: 600;
+}
+
+/* Gradient text styles */
+.gradient-text-violet-pink {
+  background: var(--gradient-violet-pink-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-blue-cyan {
+  background: var(--gradient-blue-cyan-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-emerald-lime {
+  background: var(--gradient-emerald-lime-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Button styles */
+.modern-button-v2 {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--duration-normal) cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+}
+
+.modern-button-v2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity var(--duration-normal) ease;
+}
+
+.modern-button-v2:hover::after {
+  opacity: 1;
+}
+
+.modern-button-v2:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.modern-button-gradient-v2 {
+  background: var(--gradient-blue-cyan);
+  color: white;
+  border: none;
+}
+
+/* Card styles */
+.modern-card-v2 {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: all var(--duration-normal) cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-md);
+}
+
+.modern-card-v2:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Glass card styles */
+.glass-card-modern-v2 {
+  background: var(--glass-bg-dark);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border-dark);
+  border-radius: 1.25rem;
+  box-shadow: var(--glass-shadow-dark);
+  transition: all var(--duration-normal) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-modern-v2:hover {
+  box-shadow: var(--glass-shadow-dark), 0 15px 35px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px) scale(1.01);
+}
+
+/* Section dividers */
+.section-divider-v2 {
+  height: 120px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-divider-wave-v2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.section-divider-wave-v2 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+  fill: currentColor;
+}
+
+/* Animation utilities */
+.fade-in-up-v2 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-slow) cubic-bezier(0.4, 0, 0.2, 1), 
+              transform var(--duration-slow) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up-v2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Background styles */
+.bg-gradient-violet-pink {
+  background: var(--gradient-violet-pink);
+}
+
+.bg-gradient-blue-cyan {
+  background: var(--gradient-blue-cyan);
+}
+
+.bg-gradient-emerald-lime {
+  background: var(--gradient-emerald-lime);
+}
+
+/* Dark mode adjustments */
+.dark .glass-card-modern-v2 {
+  background: var(--glass-bg-dark);
+  border-color: var(--glass-border-dark);
+}
+
+.dark .modern-typography-v2 p {
+  font-weight: 400;
+}
+
+/* Scroll animations */
+@keyframes fadeInUp-v2 {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up-v2 {
+  animation: fadeInUp-v2 var(--duration-slow) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--duration-slow) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}

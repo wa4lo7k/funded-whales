@@ -1,0 +1,180 @@
+/* Design Upgrades CSS */
+
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Global styles */
+:root {
+  /* Light gradient theme */
+  --gradient-heading-light: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  --gradient-bg-light: linear-gradient(135deg, #1e1e2f 0%, #1b2735 100%);
+  --card-bg-light: rgba(255, 255, 255, 0.1);
+  
+  /* Dark gradient theme */
+  --gradient-heading-dark: linear-gradient(to right, #4a00e0 0%, #0b5bd3 100%);
+  --gradient-bg-dark: linear-gradient(135deg, #0f0f1a 0%, #0a1622 100%);
+  --card-bg-dark: rgba(255, 255, 255, 0.05);
+}
+
+/* Apply Poppins font */
+.design-upgrade {
+  font-family: 'Poppins', sans-serif;
+}
+
+.design-upgrade h1, 
+.design-upgrade h2, 
+.design-upgrade h3, 
+.design-upgrade h4 {
+  font-weight: 700;
+}
+
+.design-upgrade p, 
+.design-upgrade a, 
+.design-upgrade li, 
+.design-upgrade span {
+  font-weight: 400;
+}
+
+/* Gradient text for headings */
+.design-upgrade h1, 
+.design-upgrade h2,
+.design-upgrade .gradient-heading {
+  background: var(--gradient-heading-light);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Dark theme gradient text */
+.dark-gradient .design-upgrade h1,
+.dark-gradient .design-upgrade h2,
+.dark-gradient .design-upgrade .gradient-heading {
+  background: var(--gradient-heading-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Section styling */
+.design-upgrade-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: var(--card-bg-light);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Dark theme section styling */
+.dark-gradient .design-upgrade-section {
+  background-color: var(--card-bg-dark);
+}
+
+/* Animations */
+.design-upgrade [data-aos] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.design-upgrade [data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effects */
+.design-upgrade .hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.design-upgrade .hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Background styles */
+.design-upgrade-bg {
+  background: var(--gradient-bg-light);
+  min-height: 100vh;
+}
+
+.dark-gradient .design-upgrade-bg {
+  background: var(--gradient-bg-dark);
+}
+
+/* Footer specific styles */
+.footer-design-upgrade {
+  background-color: rgba(15, 15, 30, 0.95);
+  color: white;
+  padding: 60px 0 30px;
+}
+
+.footer-design-upgrade .footer-heading {
+  color: #007BFF;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+}
+
+.footer-design-upgrade .footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease;
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.footer-design-upgrade .footer-link:hover {
+  color: #007BFF;
+}
+
+.footer-design-upgrade .footer-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-design-upgrade .social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer-design-upgrade .social-icon {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-design-upgrade .social-icon:hover {
+  color: #007BFF;
+  transform: scale(1.1);
+}
+
+.footer-design-upgrade .risk-disclosure {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.footer-design-upgrade .risk-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #007BFF;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer-design-upgrade .risk-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.footer-design-upgrade .copyright {
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+}

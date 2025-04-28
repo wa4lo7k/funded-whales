@@ -1,0 +1,170 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum ChallengeType {
+  WHALE_HUNTER
+  DEEP_OCEAN
+  BLUE_WHALE
+}
+
+enum ChallengeStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  FAILED
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+enum PaymentMethod {
+  USDT_BEP20
+  CREDIT_CARD
+  BANK_TRANSFER
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  password      String
+  image         String?
+  role          UserRole  @default(USER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  refreshTokens    RefreshToken[]
+  sessions         Session[]
+  tradingAccounts  TradingAccount[]
+  challenges       Challenge[]
+  payments         Payment[]
+  myfxbookAccounts MyfxbookAccount[]
+}
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model TradingAccount {
+  id                String   @id @default(cuid())
+  accountNumber     String   @unique
+  balance           Float    @default(0)
+  equity            Float    @default(0)
+  profit            Float    @default(0)
+  drawdown          Float    @default(0)
+  winRate           Float    @default(0)
+  tradesCount       Int      @default(0)
+  winningTrades     Int      @default(0)
+  losingTrades      Int      @default(0)
+  averageWin        Float    @default(0)
+  averageLoss       Float    @default(0)
+  lastTradeDate     DateTime?
+  isActive          Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challenge         Challenge?
+
+  @@index([userId])
+}
+
+model Challenge {
+  id                String         @id @default(cuid())
+  type              ChallengeType
+  status            ChallengeStatus @default(NOT_STARTED)
+  startDate         DateTime?
+  endDate           DateTime?
+  targetProfit      Float
+  maxDrawdown       Float
+  currentProfit     Float          @default(0)
+  currentDrawdown   Float          @default(0)
+  progressPercent   Float          @default(0)
+  accountSize       Float
+  profitShare       Float
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+
+  userId            String
+  user              User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tradingAccountId  String?        @unique
+  tradingAccount    TradingAccount? @relation(fields: [tradingAccountId], references: [id])
+  payment           Payment?
+
+  @@index([userId])
+}
+
+model Payment {
+  id                String        @id @default(cuid())
+  amount            Float
+  currency          String        @default("USD")
+  status            PaymentStatus @default(PENDING)
+  method            PaymentMethod
+  transactionId     String?
+  walletAddress     String?
+  paymentDate       DateTime?
+  expiresAt         DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  userId            String
+  user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challengeId       String?       @unique
+  challenge         Challenge?    @relation(fields: [challengeId], references: [id])
+
+  @@index([userId])
+}
+
+model MyfxbookAccount {
+  id                String    @id @default(cuid())
+  accountId         String
+  name              String
+  connected         Boolean   @default(false)
+  lastSync          DateTime  @default(now())
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  userId            String
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
