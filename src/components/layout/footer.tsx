@@ -93,11 +93,7 @@ export function Footer() {
                   Trading Challenges
                 </Link>
               </li>
-              <li>
-                <Link href="#risk-management" className="text-muted-foreground hover:text-primary transition-colors">
-                  Risk Management
-                </Link>
-              </li>
+
               <li>
                 <Link href="#learning-resources" className="text-muted-foreground hover:text-primary transition-colors">
                   Learning Resources
@@ -123,6 +119,11 @@ export function Footer() {
               <li>
                 <Link href="#faq" className="text-muted-foreground hover:text-primary transition-colors">
                   FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-it-works" className="text-muted-foreground hover:text-primary transition-colors">
+                  How It Works
                 </Link>
               </li>
             </ul>

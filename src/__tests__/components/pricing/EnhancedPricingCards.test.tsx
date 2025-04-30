@@ -41,39 +41,37 @@ describe('EnhancedPricingCards', () => {
     expect(screen.getByText('Choose Your Challenge')).toBeInTheDocument();
 
     // Check if all account size buttons are rendered
-    expect(screen.getAllByText('$1,000')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('$5,000')[0]).toBeInTheDocument();
     expect(screen.getAllByText('$10,000')[0]).toBeInTheDocument();
     expect(screen.getAllByText('$50,000')[0]).toBeInTheDocument();
-    expect(screen.getAllByText('$500,000')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('$100,000')[0]).toBeInTheDocument();
 
-    // Check if the default challenge cards are rendered (3 variations)
-    expect(screen.getByText('Starter Challenge')).toBeInTheDocument();
-    expect(screen.getByText('Express Starter Challenge')).toBeInTheDocument();
-    expect(screen.getByText('Evaluation Starter Challenge')).toBeInTheDocument();
+    // Check if all three plan types are rendered
+    expect(screen.getByText('Student')).toBeInTheDocument();
+    expect(screen.getByText('Practitioner')).toBeInTheDocument();
+    expect(screen.getByText('Master')).toBeInTheDocument();
   });
 
   it('changes the displayed challenges when a different account size is selected', () => {
     render(<EnhancedPricingCards />);
 
     // Click on a different account size
-    fireEvent.click(screen.getByText('$10,000'));
+    fireEvent.click(screen.getByText('$25,000'));
 
-    // Check if the new challenge cards are rendered
-    expect(screen.getByText('Popular Trader Challenge')).toBeInTheDocument();
-    expect(screen.getByText('Express Popular Trader Challenge')).toBeInTheDocument();
-    expect(screen.getByText('Evaluation Popular Trader Challenge')).toBeInTheDocument();
+    // Check if all three plan types are still rendered
+    expect(screen.getByText('Student')).toBeInTheDocument();
+    expect(screen.getByText('Practitioner')).toBeInTheDocument();
+    expect(screen.getByText('Master')).toBeInTheDocument();
 
     // Check if the details are updated
-    expect(screen.getAllByText('$10,000').length).toBeGreaterThan(1); // Account size appears multiple times
+    expect(screen.getAllByText('$25,000').length).toBeGreaterThan(1); // Account size appears multiple times
     expect(screen.getAllByText('80%').length).toBeGreaterThan(0); // Payout ratio
   });
 
   it('displays the "MOST POPULAR" badge on popular challenges', () => {
     render(<EnhancedPricingCards />);
 
-    // Click on $10,000 which has a popular challenge
-    fireEvent.click(screen.getByText('$10,000'));
-
+    // The default selected size is $10,000 which has a popular challenge
     // Check if the MOST POPULAR badge is displayed
     expect(screen.getAllByText('MOST POPULAR').length).toBeGreaterThan(0);
   });

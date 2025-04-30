@@ -1,7 +1,6 @@
 import { Header } from "@/components/layout/header";
 import { ChallengeCard, ChallengeFeature } from "@/components/ui/challenge-card";
 import { ChallengeCardAdvanced } from "@/components/ui/challenge-card-advanced";
-import { HftNeoPricingCard } from "@/components/pricing/hft-neo-card";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -238,16 +237,7 @@ export default function ChallengeCardsPage() {
           </div>
         </div>
 
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-center">HFT NEO Challenge</h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
-            Our most advanced trading challenge for elite traders seeking maximum performance
-          </p>
 
-          <div className="max-w-md mx-auto">
-            <HftNeoPricingCard />
-          </div>
-        </div>
       </main>
 
       <footer className="py-8 text-center text-sm text-muted-foreground">

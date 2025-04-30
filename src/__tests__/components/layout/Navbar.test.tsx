@@ -43,8 +43,8 @@ describe('Navbar', () => {
     // Check if the navigation links are rendered
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('Why Us')).toBeInTheDocument();
-    expect(screen.getByText('How It Works')).toBeInTheDocument();
     expect(screen.getByText('Pricing')).toBeInTheDocument();
+    expect(screen.getByText('Join Us')).toBeInTheDocument();
     expect(screen.getByText('FAQ')).toBeInTheDocument();
   });
 

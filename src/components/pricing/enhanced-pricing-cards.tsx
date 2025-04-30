@@ -9,161 +9,100 @@ import styles from "./enhanced-pricing-cards.module.css";
 
 // Challenge data for different account sizes
 const accountSizes = [
-  "$1,000", "$3,000", "$5,000", "$10,000", "$25,000",
-  "$50,000", "$100,000", "$200,000", "$500,000"
+  "$5,000", "$10,000", "$25,000", "$50,000", "$100,000"
 ];
 
-// Challenge details for each account size
+// Challenge details for each account size - FundingPips One-Step Evaluation model
 const challengeDetails = {
-  "$1,000": {
-    title: "Starter Challenge",
-    details: {
-      accountSize: "$1,000",
-      profitTarget: "8%",
-      maxDailyLoss: "3%",
-      maxTotalLoss: "6%",
-      payoutRatio: "75%",
-      leverage: "1:30"
-    },
-    description: "Best for beginners to practice funded trading.",
-    popular: false,
-    price: 49,
-    originalPrice: 69,
-  },
-  "$3,000": {
-    title: "Beginner Plus Challenge",
-    details: {
-      accountSize: "$3,000",
-      profitTarget: "8%",
-      maxDailyLoss: "3%",
-      maxTotalLoss: "6%",
-      payoutRatio: "75%",
-      leverage: "1:30"
-    },
-    description: "Slightly larger account for steady growth.",
-    popular: false,
-    price: 79,
-    originalPrice: 99,
-  },
   "$5,000": {
-    title: "Growth Starter",
+    title: "Student",
     details: {
       accountSize: "$5,000",
-      profitTarget: "8%",
+      profitTarget: "10%",
       maxDailyLoss: "4%",
-      maxTotalLoss: "8%",
-      payoutRatio: "80%",
+      maxTotalLoss: "6%",
+      payoutRatio: "75%",
       leverage: "1:50"
     },
-    description: "Ideal for serious traders ready to scale.",
+    description: "Perfect for beginners learning to trade.",
     popular: false,
-    price: 89,
-    originalPrice: 119,
+    price: 59,
+    originalPrice: 79,
   },
   "$10,000": {
-    title: "Popular Trader Challenge",
+    title: "Student",
     details: {
       accountSize: "$10,000",
-      profitTarget: "8%",
+      profitTarget: "10%",
       maxDailyLoss: "4%",
-      maxTotalLoss: "8%",
-      payoutRatio: "80%",
+      maxTotalLoss: "6%",
+      payoutRatio: "75%",
       leverage: "1:50"
     },
-    description: "Most chosen plan for career traders!",
+    description: "Perfect for beginners learning to trade.",
     popular: true,
     price: 99,
-    originalPrice: 149,
+    originalPrice: 129,
   },
   "$25,000": {
-    title: "Advanced Trader Challenge",
+    title: "Practitioner",
     details: {
       accountSize: "$25,000",
       profitTarget: "10%",
-      maxDailyLoss: "5%",
-      maxTotalLoss: "10%",
+      maxDailyLoss: "4%",
+      maxTotalLoss: "6%",
       payoutRatio: "80%",
       leverage: "1:50"
     },
-    description: "More capital, more flexibility.",
+    description: "For experienced traders ready to grow.",
     popular: false,
     price: 199,
-    originalPrice: 299,
+    originalPrice: 249,
   },
   "$50,000": {
-    title: "Professional Trader Challenge",
+    title: "Practitioner",
     details: {
       accountSize: "$50,000",
       profitTarget: "10%",
-      maxDailyLoss: "5%",
-      maxTotalLoss: "10%",
-      payoutRatio: "85%",
+      maxDailyLoss: "4%",
+      maxTotalLoss: "6%",
+      payoutRatio: "80%",
       leverage: "1:50"
     },
-    description: "Massive growth potential with bigger rewards.",
+    description: "For experienced traders ready to grow.",
     popular: true,
-    price: 399,
-    originalPrice: 499,
+    price: 299,
+    originalPrice: 399,
   },
   "$100,000": {
-    title: "Elite Trader Challenge",
+    title: "Master",
     details: {
       accountSize: "$100,000",
       profitTarget: "10%",
-      maxDailyLoss: "5%",
-      maxTotalLoss: "10%",
+      maxDailyLoss: "4%",
+      maxTotalLoss: "6%",
       payoutRatio: "85%",
       leverage: "1:50"
     },
-    description: "For elite and experienced traders.",
+    description: "For professional traders seeking excellence.",
     popular: false,
-    price: 599,
-    originalPrice: 799,
-  },
-  "$200,000": {
-    title: "Master Trader Challenge",
-    details: {
-      accountSize: "$200,000",
-      profitTarget: "10%",
-      maxDailyLoss: "5%",
-      maxTotalLoss: "10%",
-      payoutRatio: "85%",
-      leverage: "1:30"
-    },
-    description: "Trade like a true professional.",
-    popular: false,
-    price: 899,
-    originalPrice: 1299,
-  },
-  "$500,000": {
-    title: "Legend Trader Challenge",
-    details: {
-      accountSize: "$500,000",
-      profitTarget: "10%",
-      maxDailyLoss: "5%",
-      maxTotalLoss: "10%",
-      payoutRatio: "90%",
-      leverage: "1:30"
-    },
-    description: "Ultimate funding experience for the best traders.",
-    popular: false,
-    price: 1999,
-    originalPrice: 2999,
-  },
+    price: 499,
+    originalPrice: 699,
+  }
 };
 
-// Common features for all challenges
+// Common features for all challenges - FundingPips One-Step Evaluation model
 const commonFeatures = [
-  "Unlimited trading time",
+  "One-step evaluation process",
   "One-time fee",
   "Forex, Indices, Commodities",
   "Weekend holding allowed",
-  "Scaling opportunities",
+  "10% profit target",
   "Real-time dashboard",
 ];
 
 export function EnhancedPricingCards() {
-  const [selectedSize, setSelectedSize] = useState("$1,000");
+  const [selectedSize, setSelectedSize] = useState("$10,000");
 
   // Get challenge details for the selected size
   const selectedChallenge = challengeDetails[selectedSize];
@@ -176,9 +115,12 @@ export function EnhancedPricingCards() {
   return (
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
-        <h3 className="text-2xl md:text-3xl font-bold mb-8">
+        <h3 className="text-2xl md:text-3xl font-bold mb-4">
           Choose Your Challenge
         </h3>
+        <p className="text-muted-foreground mt-2 max-w-2xl mx-auto mb-8">
+          Select from Student, Practitioner, or Master plans based on your trading experience
+        </p>
 
         {/* Account Size Selector */}
         <div className={styles.sizeSelector}>
@@ -199,116 +141,6 @@ export function EnhancedPricingCards() {
         </div>
       </div>
 
-      {/* HFT NEO Special Card */}
-      <div className="mb-12 max-w-md mx-auto">
-        <motion.div
-          className="relative rounded-lg overflow-hidden"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          whileHover={{ y: -5 }}
-        >
-          {/* Background with purple gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-purple-600/20 to-purple-800/20" />
-
-          {/* Limited Time Offer badge */}
-          <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
-            Limited Time Offer
-          </div>
-
-          <div className="relative h-full flex flex-col rounded-lg overflow-hidden border border-purple-500"
-            style={{
-              background: "var(--glass-background)",
-              backdropFilter: "blur(var(--glass-blur))",
-              WebkitBackdropFilter: "blur(var(--glass-blur))",
-            }}
-          >
-            {/* Header with gradient */}
-            <div
-              className="p-6 pb-4"
-              style={{
-                background: "linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(126, 34, 206, 0.2))",
-              }}
-            >
-              <div className="flex items-center mb-3">
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center mr-3"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(126, 34, 206, 0.3))",
-                  }}
-                >
-                  <CrownIcon className="w-5 h-5 text-yellow-400" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold">HFT NEO</h3>
-                  <p className="text-sm text-muted-foreground">For elite traders seeking maximum performance</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card content */}
-            <div className="p-6 flex-grow">
-              {/* Price section */}
-              <div className="mb-6">
-                <div className="flex items-center mb-1">
-                  <span className="text-lg text-muted-foreground line-through mr-2">$23</span>
-                  <span className="bg-orange-500/20 text-orange-500 text-xs font-semibold px-2 py-0.5 rounded">
-                    30% OFF
-                  </span>
-                </div>
-                <div className="flex items-baseline">
-                  <span className="text-4xl font-bold text-green-500">$15</span>
-                  <span className="ml-2 text-sm text-muted-foreground">Save $8</span>
-                </div>
-              </div>
-
-              {/* Metrics grid */}
-              <div className="space-y-0">
-                <div className="flex justify-between items-center py-2 border-b border-gray-800/30">
-                  <span className="text-sm text-muted-foreground">Profit Target</span>
-                  <span className="font-semibold">8%</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-800/30">
-                  <span className="text-sm text-muted-foreground">Daily Drawdown</span>
-                  <span className="font-semibold">5%</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-800/30">
-                  <span className="text-sm text-muted-foreground">Max Drawdown</span>
-                  <span className="font-semibold">10%</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-800/30">
-                  <span className="text-sm text-muted-foreground">Profit Split</span>
-                  <span className="font-semibold">Up to 90%</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-800/30">
-                  <span className="text-sm text-muted-foreground">Min Trading Days</span>
-                  <span className="font-semibold">0</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-800/30">
-                  <span className="text-sm text-muted-foreground">Leverage</span>
-                  <span className="font-semibold">1:100</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Button */}
-            <div className="p-6 pt-0">
-              <Button
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white"
-              >
-                Get Started →
-              </Button>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      <div className="text-center mb-8">
-        <h3 className="text-xl md:text-2xl font-bold">
-          Standard Trading Challenges
-        </h3>
-      </div>
-
       {/* Challenge Cards */}
       <div className={styles.cardGrid}>
         {/* We'll display 3 variations of the selected challenge */}
@@ -327,20 +159,49 @@ export function EnhancedPricingCards() {
           let description = challenge.description;
           let additionalFeatures = [];
 
-          if (variation === 1) {
-            title = `Express ${challenge.title}`;
+          // Set specific plan titles and pricing for each variation regardless of selected account size
+          if (variation === 0) {
+            title = "Student";
+            // Student plan is always the most affordable
+            price = challenge.price;
+            originalPrice = challenge.originalPrice;
+            popular = selectedSize === "$10,000"; // Make Student popular for $10k
+            description = "Perfect for beginners learning to trade.";
+            additionalFeatures = ["Beginner-friendly interface", "Basic educational resources", "Community forum access"];
+
+            // Special case for $100K account
+            if (selectedSize === "$100,000") {
+              price = 449;
+              originalPrice = 599;
+            }
+          } else if (variation === 1) {
+            title = "Practitioner";
+            // Practitioner plan is mid-range
+            price = Math.round(challenge.price * 1.1);
+            originalPrice = Math.round(challenge.originalPrice * 1.1);
+            popular = selectedSize === "$50,000"; // Make Practitioner popular for $50k
+            description = "For experienced traders ready to grow.";
+            additionalFeatures = ["Priority support", "Advanced trading analytics", "Weekly market insights"];
+
+            // Special case for $100K account
+            if (selectedSize === "$100,000") {
+              price = 499;
+              originalPrice = 649;
+            }
+          } else if (variation === 2) {
+            title = "Master";
+            // Master plan is premium
             price = Math.round(challenge.price * 1.2);
             originalPrice = Math.round(challenge.originalPrice * 1.2);
-            popular = selectedSize === "$50,000"; // Make Express popular for $50k
-            description = "Fast-track evaluation with higher profit targets";
-            additionalFeatures = ["Faster evaluation", "Higher profit targets", "Priority support"];
-          } else if (variation === 2) {
-            title = `Evaluation ${challenge.title}`;
-            price = Math.round(challenge.price * 0.9);
-            originalPrice = Math.round(challenge.originalPrice * 0.9);
-            popular = selectedSize === "$10,000"; // Make Evaluation popular for $10k
-            description = "Two-phase evaluation with lower risk";
-            additionalFeatures = ["Two-phase evaluation", "Lower risk parameters", "Extended time limit"];
+            popular = false;
+            description = "For professional traders seeking excellence.";
+            additionalFeatures = ["VIP support", "Premium analytics", "One-on-one coaching session"];
+
+            // Special case for $100K account
+            if (selectedSize === "$100,000") {
+              price = 599;
+              originalPrice = 799;
+            }
           }
 
           // Calculate discount for this variation
@@ -351,20 +212,29 @@ export function EnhancedPricingCards() {
           // Combine features
           const features = [...commonFeatures, ...additionalFeatures];
 
-          // Get the appropriate icon and colors based on variation
+          // Get the appropriate icon and colors based on plan type
           let Icon = WhaleIcon;
           let gradientFrom = "#0ea5e9"; // Sky blue
           let gradientTo = "#06b6d4"; // Cyan
           let buttonColor = "bg-blue-600 hover:bg-blue-700";
           let borderColor = "border-blue-500";
 
-          if (variation === 1) {
+          if (variation === 0) {
+            // Student plan - Blue theme
+            Icon = WhaleIcon;
+            gradientFrom = "#0ea5e9"; // Sky blue
+            gradientTo = "#06b6d4"; // Cyan
+            buttonColor = "bg-blue-600 hover:bg-blue-700";
+            borderColor = "border-blue-500";
+          } else if (variation === 1) {
+            // Practitioner plan - Orange/Indigo theme
             Icon = AnchorIcon;
-            gradientFrom = "#6366f1"; // Indigo
-            gradientTo = "#8b5cf6"; // Violet
-            buttonColor = "bg-indigo-600 hover:bg-indigo-700";
-            borderColor = "border-indigo-500";
+            gradientFrom = "#f97316"; // Orange
+            gradientTo = "#6366f1"; // Indigo
+            buttonColor = "bg-orange-600 hover:bg-orange-700";
+            borderColor = "border-orange-500";
           } else if (variation === 2) {
+            // Master plan - Purple/Gold theme
             Icon = CrownIcon;
             gradientFrom = "#8b5cf6"; // Violet
             gradientTo = "#a855f7"; // Purple
@@ -411,28 +281,40 @@ export function EnhancedPricingCards() {
                 </div>
               )}
 
+              {variation === 0 && !popular && (
+                <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
+                  BEGINNER
+                </div>
+              )}
+
               {variation === 1 && !popular && (
                 <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
-                  EXPRESS
+                  INTERMEDIATE
                 </div>
               )}
 
               {variation === 2 && !popular && (
                 <div className="absolute top-0 right-0 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
-                  EVALUATION
+                  ADVANCED
                 </div>
               )}
 
               {/* Left side badge for variation type when card is also popular */}
+              {variation === 0 && popular && (
+                <div className="absolute top-0 left-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg rounded-tl-lg z-10">
+                  BEGINNER
+                </div>
+              )}
+
               {variation === 1 && popular && (
                 <div className="absolute top-0 left-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg rounded-tl-lg z-10">
-                  EXPRESS
+                  INTERMEDIATE
                 </div>
               )}
 
               {variation === 2 && popular && (
                 <div className="absolute top-0 left-0 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg rounded-tl-lg z-10">
-                  EVALUATION
+                  ADVANCED
                 </div>
               )}
 

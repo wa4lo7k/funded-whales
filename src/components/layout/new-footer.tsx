@@ -50,11 +50,7 @@ export function NewFooter() {
                   Trading Challenges
                 </Link>
               </li>
-              <li>
-                <Link href="#risk-management" className="footer-link">
-                  Risk Management
-                </Link>
-              </li>
+
               <li>
                 <Link href="#learning-resources" className="footer-link">
                   Learning Resources
@@ -80,6 +76,11 @@ export function NewFooter() {
               <li>
                 <Link href="#faq" className="footer-link">
                   FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-it-works" className="footer-link">
+                  How It Works
                 </Link>
               </li>
             </ul>

@@ -2,11 +2,10 @@ import { Navbar } from "@/components/layout/navbar";
 import { CTASection } from "@/components/sections/landing/cta-section";
 import { HeroSectionNew } from "@/components/sections/landing/hero-section-new";
 import { MarketOverview } from "@/components/sections/landing/market-overview";
-import { MarketTicker } from "@/components/sections/landing/market-ticker";
 import { Testimonials } from "@/components/sections/landing/testimonials";
 import { TradingChallenges } from "@/components/sections/landing/trading-challenges";
 import { WhyFundedWhales } from "@/components/sections/why-funded-whales";
-import { RiskManagementRules } from "@/components/sections/risk-management-rules";
+
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,10 +20,8 @@ export default function LandingPage() {
 
       <main>
         <HeroSectionNew />
-        <MarketTicker />
         <TradingChallenges />
         <WhyFundedWhales />
-        <RiskManagementRules />
         <Testimonials />
         <MarketOverview />
         <CTASection />
