@@ -97,12 +97,7 @@ export function ExactFooter() {
                     <span className="group-hover:translate-x-1 transition-transform duration-200">Trading Challenges</span>
                   </Link>
                 </li>
-                <li>
-                  <Link href="#" className="text-gray-300 hover:text-blue-400 text-sm flex items-center gap-2 group transition-colors duration-200">
-                    <Shield className="w-4 h-4 text-blue-600/70" />
-                    <span className="group-hover:translate-x-1 transition-transform duration-200">Risk Management</span>
-                  </Link>
-                </li>
+
                 <li>
                   <Link href="#" className="text-gray-300 hover:text-blue-400 text-sm flex items-center gap-2 group transition-colors duration-200">
                     <BookOpen className="w-4 h-4 text-blue-600/70" />
@@ -159,7 +154,7 @@ export function ExactFooter() {
               <div>
                 <h4 className="text-sm font-medium text-blue-300 mb-2">Risk Disclosure</h4>
                 <p className="text-xs text-gray-400 leading-relaxed">
-                  Trading financial markets carries substantial risk of loss. Content is educational only and not financial advice. Funded Whales does not execute trades or manage funds. Service[...]
+                  Trading financial markets carries substantial risk of loss. Content is educational only and not financial advice. Funded Whales does not execute trades or manage funds. [...]
                 </p>
               </div>
             </div>
