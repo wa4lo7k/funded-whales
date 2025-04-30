@@ -12,21 +12,21 @@
   --gradient-purple-blue: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
   --gradient-purple-blue-soft: linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(59, 130, 246, 0.8) 100%);
   --gradient-purple-blue-text: linear-gradient(135deg, #818cf8 0%, #60a5fa 100%);
-  
+
   /* Gradient variations - Teal/Green */
   --gradient-teal-green: linear-gradient(135deg, #14b8a6 0%, #22c55e 100%);
   --gradient-teal-green-soft: linear-gradient(135deg, rgba(20, 184, 166, 0.8) 0%, rgba(34, 197, 94, 0.8) 100%);
   --gradient-teal-green-text: linear-gradient(135deg, #2dd4bf 0%, #4ade80 100%);
-  
+
   /* Gradient variations - Navy/Indigo */
   --gradient-navy-indigo: linear-gradient(135deg, #1e40af 0%, #4f46e5 100%);
   --gradient-navy-indigo-soft: linear-gradient(135deg, rgba(30, 64, 175, 0.8) 0%, rgba(79, 70, 229, 0.8) 100%);
   --gradient-navy-indigo-text: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-  
+
   /* Background gradients */
   --bg-gradient-light: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   --bg-gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  
+
   /* Glassmorphism variables */
   --glass-bg-light: rgba(255, 255, 255, 0.15);
   --glass-bg-dark: rgba(15, 23, 42, 0.25);
@@ -35,13 +35,13 @@
   --glass-shadow-light: 0 8px 32px rgba(0, 0, 0, 0.05);
   --glass-shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.2);
   --glass-blur: 12px;
-  
+
   /* Shadows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.15);
-  
+
   /* Animation durations */
   --duration-fast: 150ms;
   --duration-normal: 300ms;
@@ -181,7 +181,7 @@
 
 /* Section dividers */
 .section-divider {
-  height: 100px;
+  height: 50px;
   width: 100%;
   overflow: hidden;
   position: relative;

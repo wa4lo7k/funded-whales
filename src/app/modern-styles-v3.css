@@ -12,21 +12,21 @@
   --gradient-deep-blue-aqua: linear-gradient(135deg, #1e3a8a 0%, #0891b2 100%);
   --gradient-deep-blue-aqua-soft: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(8, 145, 178, 0.8) 100%);
   --gradient-deep-blue-aqua-text: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
-  
+
   /* Gradient variations - Purple/Fuchsia */
   --gradient-purple-fuchsia: linear-gradient(135deg, #7e22ce 0%, #c026d3 100%);
   --gradient-purple-fuchsia-soft: linear-gradient(135deg, rgba(126, 34, 206, 0.8) 0%, rgba(192, 38, 211, 0.8) 100%);
   --gradient-purple-fuchsia-text: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
-  
+
   /* Gradient variations - Slate/Blue */
   --gradient-slate-blue: linear-gradient(135deg, #334155 0%, #3b82f6 100%);
   --gradient-slate-blue-soft: linear-gradient(135deg, rgba(51, 65, 85, 0.8) 0%, rgba(59, 130, 246, 0.8) 100%);
   --gradient-slate-blue-text: linear-gradient(135deg, #64748b 0%, #60a5fa 100%);
-  
+
   /* Background gradients */
   --bg-gradient-light: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
   --bg-gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-  
+
   /* Glassmorphism variables */
   --glass-bg-light: rgba(255, 255, 255, 0.25);
   --glass-bg-dark: rgba(15, 23, 42, 0.35);
@@ -35,13 +35,13 @@
   --glass-shadow-light: 0 12px 35px rgba(0, 0, 0, 0.1);
   --glass-shadow-dark: 0 12px 35px rgba(0, 0, 0, 0.3);
   --glass-blur: 20px;
-  
+
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
   --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.25);
-  
+
   /* Animation durations */
   --duration-fast: 150ms;
   --duration-normal: 300ms;
@@ -192,7 +192,7 @@
 
 /* Section dividers */
 .section-divider-v3 {
-  height: 150px;
+  height: 80px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -219,7 +219,7 @@
 .fade-in-up-v3 {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity var(--duration-slow) cubic-bezier(0.4, 0, 0.2, 1), 
+  transition: opacity var(--duration-slow) cubic-bezier(0.4, 0, 0.2, 1),
               transform var(--duration-slow) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
