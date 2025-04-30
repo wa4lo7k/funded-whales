@@ -1,0 +1,49 @@
+/* How It Works section styles */
+
+/* Gradient backgrounds for cards */
+.how-it-works-card-1 {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(8, 145, 178, 0.3) 100%);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.how-it-works-card-2 {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.3) 0%, rgba(147, 51, 234, 0.3) 100%);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.how-it-works-card-3 {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(132, 204, 22, 0.3) 100%);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.how-it-works-card-4 {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(236, 72, 153, 0.3) 100%);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Flexbox container for horizontal layout */
+.how-it-works-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem; /* 6 in Tailwind */
+}
+
+/* Card styles */
+.how-it-works-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  transition: transform 0.3s ease;
+}
+
+.how-it-works-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .how-it-works-card {
+    min-width: 100%;
+  }
+}
