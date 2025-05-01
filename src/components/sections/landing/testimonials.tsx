@@ -44,7 +44,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 bg-[var(--glass-background)] backdrop-blur-sm">
+    <section className="py-20 bg-[#5A7682]/10 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.div
@@ -54,7 +54,7 @@ export function Testimonials() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="gradient-text">Trader Testimonials</span>
+              <span className="text-[#8FD9E2]">Trader Testimonials</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Hear from our successful traders who have passed the challenge
@@ -93,7 +93,7 @@ export function Testimonials() {
                         key={i}
                         className={`w-4 h-4 ${
                           i < testimonial.rating
-                            ? "text-yellow-400 fill-yellow-400"
+                            ? "text-[#8FD9E2] fill-[#8FD9E2]"
                             : "text-gray-300"
                         }`}
                       />

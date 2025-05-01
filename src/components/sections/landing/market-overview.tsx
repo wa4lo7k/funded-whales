@@ -183,15 +183,8 @@ export function MarketOverview() {
 
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-cyan-900/20 pointer-events-none"></div>
-
-      {/* Animated background dots */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute w-24 h-24 rounded-full bg-blue-500/30 blur-xl top-1/4 left-1/4 animate-pulse"></div>
-        <div className="absolute w-32 h-32 rounded-full bg-cyan-500/30 blur-xl bottom-1/4 right-1/4 animate-pulse-delay-1"></div>
-        <div className="absolute w-20 h-20 rounded-full bg-indigo-500/30 blur-xl top-1/3 right-1/3 animate-pulse-delay-2"></div>
-      </div>
+      {/* Simple background */}
+      <div className="absolute inset-0 bg-gray-900/5 pointer-events-none"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
@@ -202,18 +195,10 @@ export function MarketOverview() {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Decorative elements */}
-            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent rounded-full blur-sm"></div>
 
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 relative">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400">Market Overview</span>
-              <motion.span
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-blue-500/80 to-cyan-400/80 rounded-full"
-                initial={{ width: "0%" }}
-                whileInView={{ width: "40%" }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                viewport={{ once: true }}
-              ></motion.span>
+
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 relative text-blue-400">
+              Market Overview
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Stay updated with the latest market conditions across different asset classes.
@@ -231,11 +216,7 @@ export function MarketOverview() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="glass-card h-full border border-blue-500/20 shadow-lg shadow-blue-500/10 relative overflow-hidden">
-              {/* Decorative elements */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500/50 to-cyan-500/50"></div>
-              <div className="absolute -top-24 -left-24 w-48 h-48 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-xl"></div>
-
+            <div className="glass-card-modern-v3 border border-gray-700/20 shadow-lg relative overflow-hidden">
               <div ref={containerRef} className="w-full h-[550px]"></div>
             </div>
           </motion.div>
@@ -248,52 +229,26 @@ export function MarketOverview() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="glass-card h-full p-8 flex flex-col justify-center border border-cyan-500/20 shadow-lg shadow-cyan-500/10 relative overflow-hidden">
-              {/* Decorative gradient corner */}
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-xl"></div>
-
-              {/* Decorative dots */}
-              <div className="absolute bottom-4 left-4 w-24 h-24 opacity-20">
-                <div className="absolute w-2 h-2 rounded-full bg-blue-500 top-0 left-0"></div>
-                <div className="absolute w-2 h-2 rounded-full bg-blue-500 top-0 left-4"></div>
-                <div className="absolute w-2 h-2 rounded-full bg-blue-500 top-0 left-8"></div>
-                <div className="absolute w-2 h-2 rounded-full bg-blue-500 top-4 left-0"></div>
-                <div className="absolute w-2 h-2 rounded-full bg-blue-500 top-4 left-4"></div>
-                <div className="absolute w-2 h-2 rounded-full bg-blue-500 top-4 left-8"></div>
-                <div className="absolute w-2 h-2 rounded-full bg-blue-500 top-8 left-0"></div>
-                <div className="absolute w-2 h-2 rounded-full bg-blue-500 top-8 left-4"></div>
-                <div className="absolute w-2 h-2 rounded-full bg-blue-500 top-8 left-8"></div>
+            <div className="glass-card-modern-v3 h-full p-8 flex flex-col justify-center border border-gray-700/20 shadow-lg relative overflow-hidden">
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-blue-400">Market Insights</h3>
               </div>
 
-              <div className="flex items-center mb-8 relative">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center mr-4 shadow-lg shadow-blue-500/20">
-                  <LineChart className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Market Insights</span>
-                </h3>
-              </div>
-
-              <div className="space-y-6 relative">
+              <div className="space-y-6">
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: 0.3 }}
                   viewport={{ once: true }}
-                  className="p-5 rounded-xl bg-gradient-to-br from-blue-900/10 to-blue-800/5 border border-blue-500/10 hover:border-blue-500/30 transition-all duration-300 hover:shadow-md hover:shadow-blue-500/5 hover:-translate-y-1"
+                  className="p-5 rounded-xl bg-gray-800/10 border border-gray-700/20 transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="flex items-start">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mr-4 backdrop-blur-sm">
-                      <LineChart className="w-5 h-5 text-blue-400" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2 text-blue-100">
-                        Real-Time Analysis
-                      </h4>
-                      <p className="text-muted-foreground">
-                        Access professional-grade charts with advanced technical indicators to make informed trading decisions.
-                      </p>
-                    </div>
+                  <div>
+                    <h4 className="text-xl font-semibold mb-2 text-blue-400">
+                      Real-Time Analysis
+                    </h4>
+                    <p className="text-muted-foreground">
+                      Access professional-grade charts with advanced technical indicators to make informed trading decisions.
+                    </p>
                   </div>
                 </motion.div>
 
@@ -302,20 +257,15 @@ export function MarketOverview() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="p-5 rounded-xl bg-gradient-to-br from-cyan-900/10 to-cyan-800/5 border border-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300 hover:shadow-md hover:shadow-cyan-500/5 hover:-translate-y-1"
+                  className="p-5 rounded-xl bg-gray-800/10 border border-gray-700/20 transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="flex items-start">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mr-4 backdrop-blur-sm">
-                      <BarChart3 className="w-5 h-5 text-cyan-400" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2 text-cyan-100">
-                        Multi-Asset Coverage
-                      </h4>
-                      <p className="text-muted-foreground">
-                        Track forex pairs, cryptocurrencies, indices, and stocks all in one place with our comprehensive market overview.
-                      </p>
-                    </div>
+                  <div>
+                    <h4 className="text-xl font-semibold mb-2 text-blue-400">
+                      Multi-Asset Coverage
+                    </h4>
+                    <p className="text-muted-foreground">
+                      Track forex pairs, cryptocurrencies, indices, and stocks all in one place with our comprehensive market overview.
+                    </p>
                   </div>
                 </motion.div>
 
@@ -324,20 +274,15 @@ export function MarketOverview() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: 0.5 }}
                   viewport={{ once: true }}
-                  className="p-5 rounded-xl bg-gradient-to-br from-indigo-900/10 to-indigo-800/5 border border-indigo-500/10 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-md hover:shadow-indigo-500/5 hover:-translate-y-1"
+                  className="p-5 rounded-xl bg-gray-800/10 border border-gray-700/20 transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="flex items-start">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500/20 to-blue-500/20 flex items-center justify-center mr-4 backdrop-blur-sm">
-                      <TrendingUp className="w-5 h-5 text-indigo-400" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2 text-indigo-100">
-                        Trading Opportunities
-                      </h4>
-                      <p className="text-muted-foreground">
-                        Identify potential trading setups across multiple timeframes and asset classes to diversify your strategy.
-                      </p>
-                    </div>
+                  <div>
+                    <h4 className="text-xl font-semibold mb-2 text-blue-400">
+                      Trading Opportunities
+                    </h4>
+                    <p className="text-muted-foreground">
+                      Identify potential trading setups across multiple timeframes and asset classes to diversify your strategy.
+                    </p>
                   </div>
                 </motion.div>
               </div>

@@ -35,23 +35,23 @@ const challengeConfig = {
   "whale-hunter": {
     icon: WhaleIcon,
     secondaryIcon: WaveIcon,
-    gradientFrom: "#0ea5e9", // Sky blue
-    gradientTo: "#06b6d4", // Cyan
-    iconColor: "#0ea5e9",
+    gradientFrom: "#5A7682", // Primary color
+    gradientTo: "#6b8794", // Primary light
+    iconColor: "#8FD9E2", // Background color
   },
   "deep-ocean": {
     icon: AnchorIcon,
     secondaryIcon: CompassIcon,
-    gradientFrom: "#6366f1", // Indigo
-    gradientTo: "#8b5cf6", // Violet
-    iconColor: "#6366f1",
+    gradientFrom: "#5A7682", // Primary color
+    gradientTo: "#222538", // Secondary color
+    iconColor: "#8FD9E2", // Background color
   },
   "blue-whale": {
     icon: CrownIcon,
     secondaryIcon: WhaleIcon,
-    gradientFrom: "#0284c7", // Blue
-    gradientTo: "#0891b2", // Cyan
-    iconColor: "#0284c7",
+    gradientFrom: "#222538", // Secondary color
+    gradientTo: "#5A7682", // Primary color
+    iconColor: "#8FD9E2", // Background color
   },
 };
 
@@ -75,13 +75,13 @@ export function ChallengeCardAdvanced({
   const Icon = config.icon;
   const SecondaryIcon = config.secondaryIcon;
   const discount = Math.round(((originalPrice - discountedPrice) / originalPrice) * 100);
-  
+
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
-  
+
   // Mouse position for gradient effect
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  
+
   function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
     const { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
@@ -124,15 +124,15 @@ export function ChallengeCardAdvanced({
           className="absolute inset-0 opacity-50"
           style={{ background }}
         />
-        
+
         {popular && (
           <div className="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
             MOST POPULAR
           </div>
         )}
-        
+
         {badge && (
-          <div 
+          <div
             className="absolute top-4 left-0 text-white text-xs font-bold px-3 py-1 rounded-r-lg z-10"
             style={{
               background: `linear-gradient(135deg, ${config.gradientFrom}, ${config.gradientTo})`,
@@ -170,11 +170,11 @@ export function ChallengeCardAdvanced({
               <p className="text-sm text-muted-foreground">{description}</p>
             </div>
           </div>
-          
+
           {timeLeft && (
             <div className="mt-2 text-sm">
               <span className="text-muted-foreground">Limited offer: </span>
-              <span className="font-medium" style={{ color: config.iconColor }}>
+              <span className="font-medium" style={{ color: "#8FD9E2" }}>
                 {timeLeft} left
               </span>
             </div>
@@ -191,7 +191,7 @@ export function ChallengeCardAdvanced({
                   <span className="text-lg text-muted-foreground line-through ml-2">
                     ${originalPrice}
                   </span>
-                  <span className="ml-2 bg-green-500/10 text-green-600 dark:text-green-400 text-xs font-medium px-2 py-1 rounded">
+                  <span className="ml-2 bg-[#5A7682]/20 text-[#8FD9E2] text-xs font-medium px-2 py-1 rounded">
                     Save {discount}%
                   </span>
                 </>
@@ -249,7 +249,7 @@ export function ChallengeCardAdvanced({
                   {feature.included ? (
                     <Check
                       className="h-5 w-5 shrink-0 mr-2"
-                      style={{ color: config.iconColor }}
+                      style={{ color: "#8FD9E2" }}
                     />
                   ) : (
                     <X className="h-5 w-5 text-red-500 shrink-0 mr-2" />
@@ -257,15 +257,15 @@ export function ChallengeCardAdvanced({
                   <span className={feature.included ? "" : "text-muted-foreground"}>
                     {feature.name}
                   </span>
-                  
+
                   {feature.tooltip && (
                     <div className="relative ml-1">
-                      <Info 
+                      <Info
                         className="h-4 w-4 text-muted-foreground cursor-help inline-block"
                         onMouseEnter={() => setActiveTooltip(feature.name)}
                         onMouseLeave={() => setActiveTooltip(null)}
                       />
-                      
+
                       {activeTooltip === feature.name && (
                         <div className="absolute bottom-full left-0 mb-2 w-48 p-2 bg-[var(--glass-background)] backdrop-blur-md border border-[var(--glass-border)] rounded shadow-lg z-10 text-xs">
                           {feature.tooltip}

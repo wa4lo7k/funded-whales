@@ -111,8 +111,8 @@ export function Navbar() {
       className={cn(
         "fixed mt-2 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "py-1 glass shadow-sm" // Original glass effect when scrolled
-          : "py-2 bg-[#0c2d48]" // Dark blue background when not scrolled, reduced height
+          ? "py-1 glass shadow-sm" // Glass effect when scrolled
+          : "py-2 bg-gradient-to-r from-[#222538] to-[#3A5662]" // Gradient background when not scrolled
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">

@@ -15,17 +15,17 @@
 }
 
 .sizeButtonActive {
-  background: linear-gradient(to right, var(--color-blue-500), var(--color-cyan-500));
+  background: rgba(255, 255, 255, 0.2);
   color: white;
 }
 
 .sizeButtonInactive {
-  background-color: rgba(30, 41, 59, 0.5);
-  color: rgb(209, 213, 219);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
 .sizeButtonInactive:hover {
-  background-color: rgba(51, 65, 85, 0.5);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .cardGrid {
@@ -49,8 +49,8 @@
   overflow: hidden;
   border: 1px solid var(--glass-border);
   background: var(--glass-background);
-  backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
 }
 
 .cardPopular {
@@ -74,7 +74,7 @@
 .cardHeader {
   padding: 1.5rem;
   padding-bottom: 1rem;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(14, 165, 233, 0.1));
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .cardContent {
@@ -106,8 +106,8 @@
 
 .discount {
   margin-left: 0.5rem;
-  background-color: rgba(34, 197, 94, 0.1);
-  color: rgb(74, 222, 128);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
   font-size: 0.75rem;
   font-weight: 500;
   padding: 0.25rem 0.5rem;

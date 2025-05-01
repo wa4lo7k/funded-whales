@@ -1,23 +1,11 @@
 /* How It Works section styles */
 
-/* Gradient backgrounds for cards */
-.how-it-works-card-1 {
-  background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(8, 145, 178, 0.3) 100%);
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-.how-it-works-card-2 {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.3) 0%, rgba(147, 51, 234, 0.3) 100%);
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-.how-it-works-card-3 {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(132, 204, 22, 0.3) 100%);
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
+/* Blue background for all cards */
+.how-it-works-card-1,
+.how-it-works-card-2,
+.how-it-works-card-3,
 .how-it-works-card-4 {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(236, 72, 153, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(8, 145, 178, 0.3) 100%);
   border-color: rgba(255, 255, 255, 0.15);
 }
 

@@ -86,7 +86,7 @@ export default function HomePage() {
           <div className="w-full mx-auto">
             {/* Flexbox container for horizontal layout with wrapping */}
             <div className="how-it-works-container">
-              {/* Item 1 with gradient background */}
+              {/* Item 1 */}
               <div className="glass-card-modern-v3 p-6 fade-in-up-v3 animate-delay-100 how-it-works-card how-it-works-card-1">
                 <h3 className="text-xl font-semibold mb-4 gradient-text-deep-blue-aqua">1. Choose Your Challenge</h3>
                 <p className="text-muted-foreground">
@@ -95,27 +95,27 @@ export default function HomePage() {
                 </p>
               </div>
 
-              {/* Item 2 with gradient background */}
+              {/* Item 2 */}
               <div className="glass-card-modern-v3 p-6 fade-in-up-v3 animate-delay-200 how-it-works-card how-it-works-card-2">
-                <h3 className="text-xl font-semibold mb-4 gradient-text-purple-fuchsia">2. Pass the Challenge</h3>
+                <h3 className="text-xl font-semibold mb-4 gradient-text-deep-blue-aqua">2. Pass the Challenge</h3>
                 <p className="text-muted-foreground">
                   Demonstrate your trading skills by meeting the profit target while adhering to our risk management rules.
                   There's no time limit, allowing you to trade at your own pace.
                 </p>
               </div>
 
-              {/* Item 3 with gradient background */}
+              {/* Item 3 */}
               <div className="glass-card-modern-v3 p-6 fade-in-up-v3 animate-delay-300 how-it-works-card how-it-works-card-3">
-                <h3 className="text-xl font-semibold mb-4 gradient-text-emerald-lime">3. Get Funded</h3>
+                <h3 className="text-xl font-semibold mb-4 gradient-text-deep-blue-aqua">3. Get Funded</h3>
                 <p className="text-muted-foreground">
                   Once you pass the challenge, you'll receive a funded account with real capital.
                   Start trading immediately and keep up to 90% of the profits you generate.
                 </p>
               </div>
 
-              {/* Item 4 with gradient background */}
+              {/* Item 4 */}
               <div className="glass-card-modern-v3 p-6 fade-in-up-v3 animate-delay-400 how-it-works-card how-it-works-card-4">
-                <h3 className="text-xl font-semibold mb-4 gradient-text-violet-pink">4. Scale Your Account</h3>
+                <h3 className="text-xl font-semibold mb-4 gradient-text-deep-blue-aqua">4. Scale Your Account</h3>
                 <p className="text-muted-foreground">
                   As you demonstrate consistent profitability, you'll have opportunities to scale your account size,
                   increasing your earning potential and trading capital.

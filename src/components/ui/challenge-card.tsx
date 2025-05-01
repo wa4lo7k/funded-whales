@@ -31,21 +31,21 @@ export interface ChallengeCardProps {
 const challengeConfig = {
   "whale-hunter": {
     icon: WhaleIcon,
-    gradientFrom: "#0ea5e9", // Sky blue
-    gradientTo: "#06b6d4", // Cyan
-    iconColor: "#0ea5e9",
+    gradientFrom: "#5A7682", // Primary color
+    gradientTo: "#6b8794", // Primary light
+    iconColor: "#8FD9E2", // Background color
   },
   "deep-ocean": {
     icon: AnchorIcon,
-    gradientFrom: "#6366f1", // Indigo
-    gradientTo: "#8b5cf6", // Violet
-    iconColor: "#6366f1",
+    gradientFrom: "#5A7682", // Primary color
+    gradientTo: "#222538", // Secondary color
+    iconColor: "#8FD9E2", // Background color
   },
   "blue-whale": {
     icon: CrownIcon,
-    gradientFrom: "#0284c7", // Blue
-    gradientTo: "#0891b2", // Cyan
-    iconColor: "#0284c7",
+    gradientFrom: "#222538", // Secondary color
+    gradientTo: "#5A7682", // Primary color
+    iconColor: "#8FD9E2", // Background color
   },
 };
 
@@ -131,7 +131,7 @@ export function ChallengeCard({
                   <span className="text-lg text-muted-foreground line-through ml-2">
                     ${originalPrice}
                   </span>
-                  <span className="ml-2 bg-green-500/10 text-green-600 dark:text-green-400 text-xs font-medium px-2 py-1 rounded">
+                  <span className="ml-2 bg-[#5A7682]/20 text-[#8FD9E2] text-xs font-medium px-2 py-1 rounded">
                     Save {discount}%
                   </span>
                 </>
@@ -188,8 +188,8 @@ export function ChallengeCard({
                 <li key={index} className="flex items-start">
                   {feature.included ? (
                     <Check
-                      className="h-5 w-5 text-green-500 shrink-0 mr-2"
-                      style={{ color: config.iconColor }}
+                      className="h-5 w-5 shrink-0 mr-2"
+                      style={{ color: "#8FD9E2" }}
                     />
                   ) : (
                     <X className="h-5 w-5 text-red-500 shrink-0 mr-2" />

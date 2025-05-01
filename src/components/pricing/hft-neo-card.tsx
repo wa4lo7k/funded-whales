@@ -33,15 +33,15 @@ export function HftNeoPricingCard({ className = "" }: HftNeoPricingCardProps) {
       transition={{ duration: 0.5 }}
       whileHover={{ y: -5 }}
     >
-      {/* Background with purple gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-600/20 to-purple-800/20" />
+      {/* Background with gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#5A7682]/20 to-[#222538]/20" />
 
       {/* Limited Time Offer badge */}
-      <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
+      <div className="absolute top-0 right-0 bg-[#5A7682] text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
         Limited Time Offer
       </div>
 
-      <div className="relative h-full flex flex-col rounded-lg overflow-hidden border border-purple-500"
+      <div className="relative h-full flex flex-col rounded-lg overflow-hidden border border-[#5A7682]"
         style={{
           background: "var(--glass-background)",
           backdropFilter: "blur(var(--glass-blur))",
@@ -52,17 +52,17 @@ export function HftNeoPricingCard({ className = "" }: HftNeoPricingCardProps) {
         <div
           className="p-6 pb-4"
           style={{
-            background: "linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(126, 34, 206, 0.2))",
+            background: "linear-gradient(135deg, rgba(90, 118, 130, 0.2), rgba(34, 37, 56, 0.2))",
           }}
         >
           <div className="flex items-center mb-3">
             <div
               className="w-10 h-10 rounded-full flex items-center justify-center mr-3"
               style={{
-                background: "linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(126, 34, 206, 0.3))",
+                background: "linear-gradient(135deg, rgba(90, 118, 130, 0.3), rgba(34, 37, 56, 0.3))",
               }}
             >
-              <CrownIcon className="w-5 h-5 text-yellow-400" />
+              <CrownIcon className="w-5 h-5 text-[#8FD9E2]" />
             </div>
             <div>
               <h3 className="text-2xl font-bold">HFT NEO</h3>
@@ -77,12 +77,12 @@ export function HftNeoPricingCard({ className = "" }: HftNeoPricingCardProps) {
           <div className="mb-6">
             <div className="flex items-center mb-1">
               <span className="text-lg text-muted-foreground line-through mr-2">${originalPrice}</span>
-              <span className="bg-orange-500/20 text-orange-500 text-xs font-semibold px-2 py-0.5 rounded">
+              <span className="bg-[#5A7682]/20 text-[#8FD9E2] text-xs font-semibold px-2 py-0.5 rounded">
                 {discountPercentage}% OFF
               </span>
             </div>
             <div className="flex items-baseline">
-              <span className="text-4xl font-bold text-green-500">${discountedPrice}</span>
+              <span className="text-4xl font-bold text-[#8FD9E2]">${discountedPrice}</span>
               <span className="ml-2 text-sm text-muted-foreground">Save ${saveAmount}</span>
             </div>
           </div>
@@ -101,7 +101,7 @@ export function HftNeoPricingCard({ className = "" }: HftNeoPricingCardProps) {
         {/* Button */}
         <div className="p-6 pt-0">
           <Button
-            className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+            className="w-full bg-[#222538] hover:bg-[#191b2c] text-white"
           >
             Get Started →
           </Button>

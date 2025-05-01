@@ -78,9 +78,11 @@ describe('WhyFundedWhales', () => {
   it('has responsive design classes', () => {
     const { container } = render(<WhyFundedWhales />);
 
-    // Check for responsive flex classes
-    expect(container.querySelector('.flex-row')).toBeInTheDocument();
-    expect(container.querySelector('.flex-wrap')).toBeInTheDocument();
+    // Check for responsive grid classes
+    expect(container.querySelector('.grid')).toBeInTheDocument();
+    expect(container.querySelector('.grid-cols-1')).toBeInTheDocument();
+    expect(container.querySelector('.md\\:grid-cols-2')).toBeInTheDocument();
+    expect(container.querySelector('.lg\\:grid-cols-4')).toBeInTheDocument();
 
     // Check for responsive text classes
     expect(container.querySelector('.text-3xl')).toBeInTheDocument();

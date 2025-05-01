@@ -212,34 +212,26 @@ export function EnhancedPricingCards() {
           // Combine features
           const features = [...commonFeatures, ...additionalFeatures];
 
-          // Get the appropriate icon and colors based on plan type
+          // Get the appropriate icon based on plan type
           let Icon = WhaleIcon;
-          let gradientFrom = "#0ea5e9"; // Sky blue
-          let gradientTo = "#06b6d4"; // Cyan
-          let buttonColor = "bg-blue-600 hover:bg-blue-700";
-          let borderColor = "border-blue-500";
+          let buttonColor = "bg-gray-600 hover:bg-gray-700";
+          let borderColor = "border-gray-500";
 
           if (variation === 0) {
-            // Student plan - Blue theme
+            // Student plan
             Icon = WhaleIcon;
-            gradientFrom = "#0ea5e9"; // Sky blue
-            gradientTo = "#06b6d4"; // Cyan
-            buttonColor = "bg-blue-600 hover:bg-blue-700";
-            borderColor = "border-blue-500";
+            buttonColor = "bg-gray-600 hover:bg-gray-700";
+            borderColor = "border-gray-500";
           } else if (variation === 1) {
-            // Practitioner plan - Orange/Indigo theme
+            // Practitioner plan
             Icon = AnchorIcon;
-            gradientFrom = "#f97316"; // Orange
-            gradientTo = "#6366f1"; // Indigo
-            buttonColor = "bg-orange-600 hover:bg-orange-700";
-            borderColor = "border-orange-500";
+            buttonColor = "bg-gray-600 hover:bg-gray-700";
+            borderColor = "border-gray-500";
           } else if (variation === 2) {
-            // Master plan - Purple/Gold theme
+            // Master plan
             Icon = CrownIcon;
-            gradientFrom = "#8b5cf6"; // Violet
-            gradientTo = "#a855f7"; // Purple
-            buttonColor = "bg-purple-600 hover:bg-purple-700";
-            borderColor = "border-purple-500";
+            buttonColor = "bg-gray-600 hover:bg-gray-700";
+            borderColor = "border-gray-500";
           }
 
           // Calculate discount percentage
@@ -266,79 +258,63 @@ export function EnhancedPricingCards() {
               transition={{ duration: 0.5, delay: variation * 0.1 }}
               whileHover={{ y: -5 }}
             >
-              {/* Background with gradient */}
-              <div
-                className="absolute inset-0 bg-gradient-to-b opacity-20"
-                style={{
-                  background: `linear-gradient(to bottom, ${gradientFrom}, ${gradientTo})`
-                }}
-              />
+              {/* Background */}
+              <div className="absolute inset-0 bg-gray-800/20" />
 
               {/* Badges */}
               {popular && (
-                <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
+                <div className="absolute top-0 right-0 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
                   MOST POPULAR
                 </div>
               )}
 
               {variation === 0 && !popular && (
-                <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
+                <div className="absolute top-0 right-0 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
                   BEGINNER
                 </div>
               )}
 
               {variation === 1 && !popular && (
-                <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
+                <div className="absolute top-0 right-0 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
                   INTERMEDIATE
                 </div>
               )}
 
               {variation === 2 && !popular && (
-                <div className="absolute top-0 right-0 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
+                <div className="absolute top-0 right-0 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
                   ADVANCED
                 </div>
               )}
 
               {/* Left side badge for variation type when card is also popular */}
               {variation === 0 && popular && (
-                <div className="absolute top-0 left-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg rounded-tl-lg z-10">
+                <div className="absolute top-0 left-0 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-br-lg rounded-tl-lg z-10">
                   BEGINNER
                 </div>
               )}
 
               {variation === 1 && popular && (
-                <div className="absolute top-0 left-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg rounded-tl-lg z-10">
+                <div className="absolute top-0 left-0 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-br-lg rounded-tl-lg z-10">
                   INTERMEDIATE
                 </div>
               )}
 
               {variation === 2 && popular && (
-                <div className="absolute top-0 left-0 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg rounded-tl-lg z-10">
+                <div className="absolute top-0 left-0 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-br-lg rounded-tl-lg z-10">
                   ADVANCED
                 </div>
               )}
 
               <div
-                className={`relative h-full flex flex-col rounded-lg overflow-hidden border ${borderColor}`}
-                style={{
-                  background: "var(--glass-background)",
-                  backdropFilter: "blur(var(--glass-blur))",
-                  WebkitBackdropFilter: "blur(var(--glass-blur))",
-                }}
+                className={`relative h-full flex flex-col rounded-lg overflow-hidden border ${borderColor} bg-card/50 backdrop-blur-sm`}
               >
-                {/* Header with gradient */}
+                {/* Header */}
                 <div
-                  className="p-6 pb-4"
-                  style={{
-                    background: `linear-gradient(135deg, ${gradientFrom}15, ${gradientTo}15)`,
-                  }}
+                  className="p-6 pb-4 bg-gray-800/10"
                 >
                   <div className="flex items-center mb-3">
                     <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center mr-3"
-                      style={{
-                        background: `linear-gradient(135deg, ${gradientFrom}30, ${gradientTo}30)`,
-                      }}
+                      className="w-10 h-10 rounded-full flex items-center justify-center mr-3 bg-gray-700/20"
                     >
                       <Icon className="w-5 h-5" />
                     </div>
@@ -355,12 +331,12 @@ export function EnhancedPricingCards() {
                   <div className="mb-6">
                     <div className="flex items-center mb-1">
                       <span className="text-lg text-muted-foreground line-through mr-2">${originalPrice}</span>
-                      <span className="bg-orange-500/20 text-orange-500 text-xs font-semibold px-2 py-0.5 rounded">
+                      <span className="bg-gray-700/30 text-gray-300 text-xs font-semibold px-2 py-0.5 rounded">
                         {discountPercentage}% OFF
                       </span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-4xl font-bold text-green-500">${price}</span>
+                      <span className="text-4xl font-bold text-white">${price}</span>
                       <span className="ml-2 text-sm text-muted-foreground">Save ${originalPrice - price}</span>
                     </div>
                   </div>

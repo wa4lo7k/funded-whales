@@ -8,8 +8,8 @@ export function CTASection() {
     <section className="py-20 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#5A7682]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#222538]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -21,16 +21,16 @@ export function CTASection() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Start Your <span className="gradient-text">Trading Journey</span>?
+              Ready to Start Your <span className="text-[#8FD9E2]">Trading Journey</span>?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join thousands of traders who have already taken the challenge and are now trading with our funded accounts. Take the first step towards financial freedom today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-to-r from-primary to-accent text-white text-lg px-8 py-6 hover:from-primary-dark hover:to-accent-dark">
+              <Button className="bg-gradient-to-r from-[#5A7682] to-[#222538] text-white text-lg px-8 py-6 hover:from-[#4a6270] hover:to-[#191b2c]">
                 Start Trading Now
               </Button>
-              <Button variant="outline" className="text-lg px-8 py-6 border-primary/30 hover:bg-primary/10">
+              <Button variant="outline" className="text-lg px-8 py-6 border-[#5A7682]/30 hover:bg-[#5A7682]/10">
                 Learn More
               </Button>
             </div>

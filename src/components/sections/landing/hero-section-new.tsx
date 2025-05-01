@@ -52,7 +52,7 @@ export function HeroSectionNew() {
         </motion.div>
 
         {/* Dark gradient overlay for better text readability */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#222538]/60 via-[#222538]/40 to-[#222538]/70" />
 
         {/* Bubbles - Client-side only component to avoid hydration mismatch */}
         <Suspense fallback={null}>
@@ -77,7 +77,7 @@ export function HeroSectionNew() {
             <span className="block bg-clip-text bg-gradient-to-r from-white to-white/80">
               Fueling Traders{" "}
               <motion.span
-                className="text-primary inline-block"
+                className="text-[#8FD9E2] inline-block"
                 animate={{
                   x: [0, 10, 0],
                   scale: [1, 1.1, 1]
@@ -102,7 +102,7 @@ export function HeroSectionNew() {
           </p>
           <div className="flex justify-center">
             <Button
-              className="bg-gradient-to-r from-primary to-accent text-white text-lg px-10 py-7 rounded-lg hover:from-primary-dark hover:to-accent-dark transition-all duration-300 shadow-lg hover:shadow-xl font-[family-name:var(--font-space-grotesk)] font-bold tracking-wide"
+              className="bg-gradient-to-r from-[#5A7682] to-[#222538] text-white text-lg px-10 py-7 rounded-lg hover:from-[#4a6270] hover:to-[#191b2c] transition-all duration-300 shadow-lg hover:shadow-xl font-[family-name:var(--font-space-grotesk)] font-bold tracking-wide"
             >
               BUY CHALLENGE
             </Button>

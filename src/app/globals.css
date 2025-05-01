@@ -47,130 +47,132 @@
   --radius: 0.625rem;
 
   /* Background gradient colors */
-  --gradient-start: #00d2ff;
-  --gradient-end: #928DAB;
+  --gradient-start: #8FD9E2;
+  --gradient-end: #6BBBC7;
 
   /* Base colors */
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --background: #8FD9E2;
+  --foreground: #ffffff;
 
   /* Card and popover */
   --card: rgba(255, 255, 255, 0.8);
-  --card-foreground: #0f172a;
+  --card-foreground: #ffffff;
   --popover: rgba(255, 255, 255, 0.8);
-  --popover-foreground: #0f172a;
+  --popover-foreground: #ffffff;
 
-  /* Primary colors - Blue/Aqua */
-  --primary: #0ea5e9; /* Sky blue */
-  --primary-light: #38bdf8;
-  --primary-dark: #0284c7;
+  /* Primary colors - Now using the requested color for Why FundedWhales boxes */
+  --primary: #5A7682; /* Primary color for Why FundedWhales boxes */
+  --primary-light: #7A96A2;
+  --primary-dark: #3A5662;
   --primary-foreground: #ffffff;
 
   /* Secondary colors */
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
+  --secondary: #222538;
+  --secondary-foreground: #ffffff;
 
-  /* Accent colors - Teal/Aqua */
-  --accent: #06b6d4; /* Cyan */
-  --accent-light: #22d3ee;
-  --accent-dark: #0891b2;
+  /* Accent colors */
+  --accent: #4EAEBB; /* Complementary accent color */
+  --accent-light: #6BBBC7;
+  --accent-dark: #3A8A99;
   --accent-foreground: #ffffff;
 
   /* UI colors */
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --destructive: #ef4444;
+  --muted: #7A96A2; /* Primary light */
+  --muted-foreground: #ffffff;
+  --destructive: #E05252;
   --destructive-foreground: #ffffff;
-  --border: rgba(226, 232, 240, 0.8);
-  --input: rgba(226, 232, 240, 0.8);
-  --ring: #94a3b8;
+  --border: rgba(255, 255, 255, 0.25);
+  --input: rgba(90, 118, 130, 0.4); /* Based on primary color */
+  --ring: #4EAEBB; /* Accent */
 
   /* Glass effect variables */
-  --glass-background: rgba(255, 255, 255, 0.25);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-  --glass-blur: 8px;
+  --glass-background: rgba(90, 118, 130, 0.15); /* Based on primary color, more transparent */
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --glass-shadow: 0 8px 32px 0 rgba(34, 37, 56, 0.12); /* Based on secondary color */
+  --glass-blur: 10px; /* Slightly increased blur for more elegant effect */
 
   /* Chart colors */
-  --chart-1: #0ea5e9;
-  --chart-2: #06b6d4;
-  --chart-3: #0891b2;
-  --chart-4: #0284c7;
-  --chart-5: #38bdf8;
+  --chart-1: #5A7682; /* Primary */
+  --chart-2: #4EAEBB; /* Accent */
+  --chart-3: #3A5662; /* Primary dark */
+  --chart-4: #222538; /* Secondary */
+  --chart-5: #6BBBC7; /* Accent light */
+  --chart-6: #8FD9E2; /* Background */
 
   /* Sidebar colors */
-  --sidebar: rgba(255, 255, 255, 0.8);
-  --sidebar-foreground: #0f172a;
-  --sidebar-primary: #0ea5e9;
+  --sidebar: rgba(90, 118, 130, 0.7); /* Based on primary color, slightly more transparent */
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #5A7682; /* Primary */
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f1f5f9;
-  --sidebar-accent-foreground: #0f172a;
-  --sidebar-border: rgba(226, 232, 240, 0.8);
-  --sidebar-ring: #94a3b8;
+  --sidebar-accent: #4EAEBB; /* Accent */
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.25);
+  --sidebar-ring: #6BBBC7; /* Accent light */
 }
 
 .dark {
   /* Background gradient colors */
-  --gradient-start: #00d2ff;
-  --gradient-end: #928DAB;
+  --gradient-start: #8FD9E2;
+  --gradient-end: #6BBBC7;
 
   /* Base colors */
-  --background: #0f172a;
-  --foreground: #f8fafc;
+  --background: #8FD9E2;
+  --foreground: #ffffff;
 
   /* Card and popover */
-  --card: rgba(30, 41, 59, 0.8);
-  --card-foreground: #f8fafc;
-  --popover: rgba(30, 41, 59, 0.8);
-  --popover-foreground: #f8fafc;
+  --card: rgba(90, 118, 130, 0.7); /* Based on primary color with transparency */
+  --card-foreground: #ffffff;
+  --popover: rgba(90, 118, 130, 0.7);
+  --popover-foreground: #ffffff;
 
-  /* Primary colors - Blue/Aqua */
-  --primary: #38bdf8; /* Sky blue - lighter in dark mode */
-  --primary-light: #7dd3fc;
-  --primary-dark: #0ea5e9;
-  --primary-foreground: #0f172a;
+  /* Primary colors - Using the requested color for Why FundedWhales boxes */
+  --primary: #5A7682; /* Primary color for Why FundedWhales boxes */
+  --primary-light: #7A96A2;
+  --primary-dark: #3A5662;
+  --primary-foreground: #ffffff;
 
   /* Secondary colors */
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
+  --secondary: #222538;
+  --secondary-foreground: #ffffff;
 
-  /* Accent colors - Teal/Aqua */
-  --accent: #22d3ee; /* Cyan - lighter in dark mode */
-  --accent-light: #67e8f9;
-  --accent-dark: #06b6d4;
-  --accent-foreground: #0f172a;
+  /* Accent colors */
+  --accent: #4EAEBB; /* Complementary accent color */
+  --accent-light: #6BBBC7;
+  --accent-dark: #3A8A99;
+  --accent-foreground: #ffffff;
 
   /* UI colors */
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --destructive: #f87171;
-  --destructive-foreground: #0f172a;
-  --border: rgba(51, 65, 85, 0.8);
-  --input: rgba(51, 65, 85, 0.8);
-  --ring: #64748b;
+  --muted: #7A96A2; /* Primary light */
+  --muted-foreground: #ffffff;
+  --destructive: #E05252;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.25);
+  --input: rgba(90, 118, 130, 0.4); /* Based on primary color */
+  --ring: #4EAEBB; /* Accent */
 
   /* Glass effect variables */
-  --glass-background: rgba(15, 23, 42, 0.25);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  --glass-blur: 8px;
+  --glass-background: rgba(90, 118, 130, 0.15); /* Based on primary color, more transparent */
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --glass-shadow: 0 8px 32px 0 rgba(34, 37, 56, 0.12); /* Based on secondary color */
+  --glass-blur: 10px; /* Slightly increased blur for more elegant effect */
 
   /* Chart colors */
-  --chart-1: #38bdf8;
-  --chart-2: #22d3ee;
-  --chart-3: #67e8f9;
-  --chart-4: #7dd3fc;
-  --chart-5: #0ea5e9;
+  --chart-1: #5A7682; /* Primary */
+  --chart-2: #4EAEBB; /* Accent */
+  --chart-3: #3A5662; /* Primary dark */
+  --chart-4: #222538; /* Secondary */
+  --chart-5: #6BBBC7; /* Accent light */
+  --chart-6: #8FD9E2; /* Background */
 
   /* Sidebar colors */
-  --sidebar: rgba(30, 41, 59, 0.8);
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #38bdf8;
-  --sidebar-primary-foreground: #0f172a;
-  --sidebar-accent: #1e293b;
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: rgba(51, 65, 85, 0.8);
-  --sidebar-ring: #64748b;
+  --sidebar: rgba(90, 118, 130, 0.7); /* Based on primary color, slightly more transparent */
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #5A7682; /* Primary */
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #4EAEBB; /* Accent */
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.25);
+  --sidebar-ring: #6BBBC7; /* Accent light */
 }
 
 @layer base {

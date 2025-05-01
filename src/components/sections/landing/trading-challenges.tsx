@@ -71,10 +71,10 @@ export function TradingChallenges() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="gradient-text">Trading Challenges</span>
+              <span className="text-[#8FD9E2]">Trading Challenges</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose the challenge that fits your trading style and goals. 
+              Choose the challenge that fits your trading style and goals.
               Pass the challenge and get funded with our capital.
             </p>
           </motion.div>
@@ -91,52 +91,52 @@ export function TradingChallenges() {
               className="relative"
             >
               <div className={`glass-card h-full flex flex-col ${
-                challenge.popular ? 'border-2 border-primary' : ''
+                challenge.popular ? 'border-2 border-[#5A7682]' : ''
               }`}>
                 {challenge.popular && (
-                  <div className="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                  <div className="absolute top-0 right-0 bg-[#5A7682] text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
                     MOST POPULAR
                   </div>
                 )}
                 <div className="p-6 flex-grow">
                   <h3 className="text-2xl font-bold mb-2">{challenge.name}</h3>
                   <div className="mb-6">
-                    <span className="text-4xl font-bold">{challenge.price}</span>
+                    <span className="text-4xl font-bold text-[#8FD9E2]">{challenge.price}</span>
                     <span className="text-muted-foreground"> one-time fee</span>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="bg-[var(--glass-background)] p-3 rounded-lg text-center">
+                    <div className="bg-[#5A7682]/20 p-3 rounded-lg text-center">
                       <div className="text-sm text-muted-foreground">Account Size</div>
                       <div className="text-xl font-bold">{challenge.account}</div>
                     </div>
-                    <div className="bg-[var(--glass-background)] p-3 rounded-lg text-center">
+                    <div className="bg-[#5A7682]/20 p-3 rounded-lg text-center">
                       <div className="text-sm text-muted-foreground">Profit Share</div>
                       <div className="text-xl font-bold">{challenge.profitShare}</div>
                     </div>
-                    <div className="bg-[var(--glass-background)] p-3 rounded-lg text-center">
+                    <div className="bg-[#5A7682]/20 p-3 rounded-lg text-center">
                       <div className="text-sm text-muted-foreground">Profit Target</div>
                       <div className="text-xl font-bold">{challenge.profitTarget}</div>
                     </div>
-                    <div className="bg-[var(--glass-background)] p-3 rounded-lg text-center">
+                    <div className="bg-[#5A7682]/20 p-3 rounded-lg text-center">
                       <div className="text-sm text-muted-foreground">Max Drawdown</div>
                       <div className="text-xl font-bold">{challenge.maxDrawdown}</div>
                     </div>
                   </div>
-                  
+
                   <ul className="space-y-2 mb-6">
                     {challenge.features.map((feature) => (
                       <li key={feature} className="flex items-start">
-                        <Check className="h-5 w-5 text-primary shrink-0 mr-2" />
+                        <Check className="h-5 w-5 text-[#8FD9E2] shrink-0 mr-2" />
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                
+
                 <div className="p-6 pt-0">
-                  <Button 
-                    className={`w-full ${challenge.popular ? 'bg-primary hover:bg-primary/90' : ''}`}
+                  <Button
+                    className={`w-full ${challenge.popular ? 'bg-[#5A7682] hover:bg-[#4a6270]' : 'border-[#5A7682]/30 hover:bg-[#5A7682]/10'}`}
                     variant={challenge.popular ? 'default' : 'outline'}
                   >
                     Start Challenge
