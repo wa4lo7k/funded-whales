@@ -42,11 +42,6 @@ export default function HomePage() {
         <WhyFundedWhales />
       </section>
 
-      {/* Join Funded Whales Section */}
-      <section id="join-us">
-        <JoinFundedWhales />
-      </section>
-
       {/* Pricing Section */}
       <section id="pricing" className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#8b5cf6] to-[#ec4899] opacity-5"></div>
@@ -58,6 +53,11 @@ export default function HomePage() {
             <EnhancedPricingCards />
           </div>
         </div>
+      </section>
+
+      {/* Join Funded Whales Section */}
+      <section id="join-us">
+        <JoinFundedWhales />
       </section>
 
       {/* Testimonials Section */}

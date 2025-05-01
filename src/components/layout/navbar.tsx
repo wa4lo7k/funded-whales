@@ -126,7 +126,7 @@ export function Navbar() {
             className="w-10 h-10"
           />
           <span className="text-xl font-bold gradient-text hidden sm:inline-block">
-            Funded Whales
+            FundedWhales
           </span>
         </Link>
 

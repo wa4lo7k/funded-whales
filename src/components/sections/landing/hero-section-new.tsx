@@ -3,13 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useEffect, useState, Suspense, useRef } from "react";
-import dynamic from "next/dynamic";
-
-// Import the bubbles component with no SSR to avoid hydration mismatch
-const BubblesClient = dynamic(
-  () => import("./bubbles").then(mod => mod.Bubbles),
-  { ssr: false, loading: () => null }
-);
+import { BubblesClient } from "./bubbles-client";
 
 export function HeroSectionNew() {
   const videoRef = useRef<HTMLVideoElement>(null);

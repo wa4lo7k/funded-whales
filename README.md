@@ -1,7 +1,7 @@
-# 🐳 Funded Whales Trading Platform
+# 🐳 FundedWhales Trading Platform
 
 <div align="center">
-  <img src="public/android-chrome-512x512.png" alt="Funded Whales Logo" width="150" />
+  <img src="public/android-chrome-512x512.png" alt="FundedWhales Logo" width="150" />
   <h3>Take your trading to the next level with funded accounts</h3>
   <p>A modern proprietary trading firm platform built with Next.js 14+, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion</p>
 
@@ -123,11 +123,31 @@ npm run test:coverage
 yarn test:coverage
 ```
 
+## 🚀 Deployment
+
+### Deploying to Vercel
+
+This project is configured for easy deployment on Vercel:
+
+1. Push your code to a GitHub repository
+2. Import the project in the Vercel dashboard
+3. Set the following environment variables in the Vercel dashboard:
+   - `DATABASE_URL`: Your production database connection string
+   - `JWT_SECRET`: A secure random string for JWT token generation
+   - `JWT_EXPIRES_IN`: Token expiration time (e.g., "15m")
+   - `REFRESH_TOKEN_EXPIRES_IN`: Refresh token expiration (e.g., "7d")
+   - `NEXTAUTH_SECRET`: A secure random string for NextAuth
+   - `NEXTAUTH_URL`: Your Vercel deployment URL (e.g., "https://your-app.vercel.app")
+
+4. Deploy the project
+
+The project includes a `vercel.json` configuration file that handles the build process automatically.
+
 ## 🔍 Key Features Explained
 
 ### Trading Challenges
 
-Funded Whales offers three tiers of trading challenges:
+FundedWhales offers three tiers of trading challenges:
 
 1. **Whale Hunter** - Entry level funded accounts:
    - Account sizes: $25K, $50K, $100K, $200K
@@ -169,7 +189,7 @@ Secure payment options for funding your trading account:
 - **Transaction Tracking**: Monitor payment status in real-time
 - **Automatic Account Activation**: Trading accounts are activated automatically upon payment confirmation
 
-## 🌟 Why Funded Whales?
+## 🌟 Why FundedWhales?
 
 - **Rapid Funding**: Get funded quickly after passing our challenge
 - **High Profit Split**: Enjoy up to 90% profit sharing
@@ -197,7 +217,7 @@ For questions or support, please email [support@fundedwhales.com](mailto:support
 ---
 
 <div align="center">
-  <p>© 2025 Funded Whales. All rights reserved.</p>
+  <p>© 2025 FundedWhales. All rights reserved.</p>
   <p>
     <a href="#">Terms of Service</a> •
     <a href="#">Privacy Policy</a> •

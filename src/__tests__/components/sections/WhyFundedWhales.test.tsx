@@ -18,7 +18,7 @@ describe('WhyFundedWhales', () => {
     render(<WhyFundedWhales />);
 
     // Check if the section title is rendered
-    expect(screen.getByText('Why Funded Whales?')).toBeInTheDocument();
+    expect(screen.getByText('Why FundedWhales?')).toBeInTheDocument();
 
     // Check if the section description is rendered
     expect(
@@ -40,7 +40,7 @@ describe('WhyFundedWhales', () => {
       screen.getByText('Trade with full confidence. We ensure that every earned reward is rightfully and promptly given without unnecessary hurdles.')
     ).toBeInTheDocument();
     expect(
-      screen.getByText('Stay where you trade best. Funded Whales supports MetaTrader 5, cTrader, and Match-Trader for seamless performance.')
+      screen.getByText('Stay where you trade best. FundedWhales supports MetaTrader 5, cTrader, and Match-Trader for seamless performance.')
     ).toBeInTheDocument();
     expect(
       screen.getByText('Transparency at its core. What you see is what you get — no secret clauses, no unfair conditions.')
@@ -78,10 +78,9 @@ describe('WhyFundedWhales', () => {
   it('has responsive design classes', () => {
     const { container } = render(<WhyFundedWhales />);
 
-    // Check for responsive grid classes
-    expect(container.querySelector('.grid-cols-1')).toBeInTheDocument();
-    expect(container.querySelector('.md\\:grid-cols-2')).toBeInTheDocument();
-    expect(container.querySelector('.lg\\:grid-cols-2')).toBeInTheDocument();
+    // Check for responsive flex classes
+    expect(container.querySelector('.flex-row')).toBeInTheDocument();
+    expect(container.querySelector('.flex-wrap')).toBeInTheDocument();
 
     // Check for responsive text classes
     expect(container.querySelector('.text-3xl')).toBeInTheDocument();

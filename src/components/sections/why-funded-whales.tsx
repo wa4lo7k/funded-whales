@@ -28,7 +28,7 @@ const Benefit = ({ icon, title, description, delay = 0, className }: BenefitProp
         transition: { duration: 0.3 }
       }}
       className={cn(
-        "flex flex-col items-center text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 shadow-sm transition-all duration-300",
+        "flex flex-col items-center text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 shadow-sm transition-all duration-300 h-full",
         className
       )}
     >
@@ -57,7 +57,7 @@ export function WhyFundedWhales() {
     {
       icon: <Zap className="w-6 h-6 text-primary" />,
       title: "Your Favorite Platform",
-      description: "Stay where you trade best. Funded Whales supports MetaTrader 5, cTrader, and Match-Trader for seamless performance.",
+      description: "Stay where you trade best. FundedWhales supports MetaTrader 5, cTrader, and Match-Trader for seamless performance.",
     },
     {
       icon: <Eye className="w-6 h-6 text-primary" />,
@@ -107,20 +107,21 @@ export function WhyFundedWhales() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Funded Whales?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Why FundedWhales?</h2>
           <p className="text-lg text-muted-foreground">
             Join the elite community of funded traders and experience the advantages that set us apart in the industry.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {benefits.slice(0, 4).map((benefit, index) => (
+        <div className="flex flex-row flex-wrap justify-center gap-6">
+          {benefits.map((benefit, index) => (
             <Benefit
               key={index}
               icon={benefit.icon}
               title={benefit.title}
               description={benefit.description}
               delay={index * 0.1}
+              className="flex-1 min-w-[250px]"
             />
           ))}
         </div>

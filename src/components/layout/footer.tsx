@@ -50,7 +50,7 @@ export function Footer() {
                 className="w-10 h-10"
               />
               <span className="text-xl font-bold gradient-text">
-                Funded Whales
+                FundedWhales
               </span>
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
@@ -158,7 +158,7 @@ export function Footer() {
             <h4 className="text-base font-semibold text-primary mb-2">Risk Disclosure</h4>
             <p className="text-xs text-muted-foreground">
               Trading financial markets carries substantial risk of loss. Content is educational only and not financial advice.
-              Funded Whales does not execute trades or manage funds. Services are provided through third parties.
+              FundedWhales does not execute trades or manage funds. Services are provided through third parties.
               Past performance does not guarantee future results. Trade only with risk capital.
               Use of platform acknowledges acceptance of these risks.
             </p>
@@ -166,13 +166,13 @@ export function Footer() {
 
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Funded Whales. All rights reserved.
+              © {new Date().getFullYear()} FundedWhales. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0 flex items-center">
               <p className="text-sm text-muted-foreground">
                 Designed and developed with
                 <span className="mx-1 text-red-500">❤️</span>
-                by Funded Whales Team
+                by FundedWhales Team
               </p>
             </div>
           </div>
