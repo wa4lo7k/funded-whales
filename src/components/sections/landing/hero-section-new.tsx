@@ -75,30 +75,14 @@ export function HeroSectionNew() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="block bg-clip-text bg-gradient-to-r from-white to-white/80">
-              Fueling Traders{" "}
-              <motion.span
-                className="text-[#8FD9E2] inline-block"
-                animate={{
-                  x: [0, 10, 0],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                  delay: 1
-                }}
-              >
-                ➔
-              </motion.span>{" "}
-              Funding Dreams
+              Fueling Traders.{" "}
+              Funding Dreams.
             </span>
           </motion.h1>
           <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto leading-relaxed mt-4">
             Join over 1,000,000 traders in the world's leading proprietary trading firm.
             Trade in a fully simulated environment with your favorite platforms and earn
-            up to 90% profit splits with zero reward denials.
+            up to 100% profit splits with zero reward denials.
           </p>
           <div className="flex justify-center">
             <Button

@@ -81,13 +81,13 @@ export function WhyFundedWhales() {
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-center opacity-5 pointer-events-none" />
 
-      <div className="container relative z-10">
+      <div className="relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-16 px-4"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Why FundedWhales?</h2>
           <p className="text-lg text-muted-foreground">
@@ -95,17 +95,19 @@ export function WhyFundedWhales() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {benefits.map((benefit, index) => (
-            <Benefit
-              key={index}
-              icon={benefit.icon}
-              title={benefit.title}
-              description={benefit.description}
-              delay={index * 0.1}
-              className="w-full h-full"
-            />
-          ))}
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+            {benefits.map((benefit, index) => (
+              <Benefit
+                key={index}
+                icon={benefit.icon}
+                title={benefit.title}
+                description={benefit.description}
+                delay={index * 0.1}
+                className="w-full h-full"
+              />
+            ))}
+          </div>
         </div>
 
         <motion.div
@@ -113,7 +115,7 @@ export function WhyFundedWhales() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-16 text-center px-4"
         >
           <div className="inline-flex items-center justify-center gap-2 mb-6 bg-primary/10 px-4 py-2 rounded-full">
             <BadgeCheck className="w-5 h-5 text-primary" />

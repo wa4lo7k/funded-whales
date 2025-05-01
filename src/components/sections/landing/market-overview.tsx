@@ -7,6 +7,7 @@ import { LineChart, BarChart3, TrendingUp } from "lucide-react";
 
 export function MarketOverview() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const tickerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Clear any existing content
@@ -19,12 +20,18 @@ export function MarketOverview() {
     widgetContainer.className = "tradingview-widget-container";
     widgetContainer.style.height = "100%";
     widgetContainer.style.width = "100%";
+    widgetContainer.style.margin = "0";
+    widgetContainer.style.padding = "0";
+    widgetContainer.style.overflow = "hidden";
 
     // Create the widget div
     const widget = document.createElement("div");
     widget.className = "tradingview-widget-container__widget";
     widget.style.height = "100%";
     widget.style.width = "100%";
+    widget.style.margin = "0";
+    widget.style.padding = "0";
+    widget.style.overflow = "hidden";
     widgetContainer.appendChild(widget);
 
     // Create the copyright div
@@ -55,6 +62,9 @@ export function MarketOverview() {
       showFloatingTooltip: false,
       width: "100%",
       height: "100%",
+      noTimeScale: false,
+      chartOnly: false,
+      container_id: "tradingview-widget",
       plotLineColorGrowing: "rgba(41, 98, 255, 1)",
       plotLineColorFalling: "rgba(41, 98, 255, 1)",
       gridLineColor: "rgba(242, 242, 242, 0)",
@@ -181,8 +191,87 @@ export function MarketOverview() {
     };
   }, []);
 
+  useEffect(() => {
+    // Clear any existing content
+    if (tickerRef.current) {
+      tickerRef.current.innerHTML = "";
+    }
+
+    // Create the widget container
+    const widgetContainer = document.createElement("div");
+    widgetContainer.className = "tradingview-widget-container";
+    widgetContainer.style.width = "100%";
+    widgetContainer.style.margin = "0";
+    widgetContainer.style.padding = "0";
+    widgetContainer.style.overflow = "hidden";
+
+    // Create the widget div
+    const widget = document.createElement("div");
+    widget.className = "tradingview-widget-container__widget";
+    widget.style.width = "100%";
+    widget.style.margin = "0";
+    widget.style.padding = "0";
+    widget.style.overflow = "hidden";
+    widgetContainer.appendChild(widget);
+
+    // Create the copyright div
+    const copyright = document.createElement("div");
+    copyright.className = "tradingview-widget-copyright";
+    copyright.innerHTML = '<a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a>';
+    copyright.style.display = "none"; // Hide the copyright element
+    widgetContainer.appendChild(copyright);
+
+    // Add the container to the DOM
+    if (tickerRef.current) {
+      tickerRef.current.appendChild(widgetContainer);
+    }
+
+    // Create and load the script
+    const script = document.createElement("script");
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
+    script.async = true;
+    script.type = "text/javascript";
+    script.innerHTML = JSON.stringify({
+      symbols: [
+        {
+          proName: "FOREXCOM:SPXUSD",
+          title: "S&P 500 Index"
+        },
+        {
+          proName: "FOREXCOM:NSXUSD",
+          title: "US 100 Cash CFD"
+        },
+        {
+          proName: "FX_IDC:EURUSD",
+          title: "EUR to USD"
+        },
+        {
+          proName: "BITSTAMP:BTCUSD",
+          title: "Bitcoin"
+        },
+        {
+          proName: "BITSTAMP:ETHUSD",
+          title: "Ethereum"
+        }
+      ],
+      showSymbolLogo: true,
+      isTransparent: false,
+      displayMode: "regular",
+      colorTheme: "dark",
+      locale: "en"
+    });
+    widgetContainer.appendChild(script);
+
+    // Cleanup function
+    return () => {
+      if (tickerRef.current) {
+        tickerRef.current.innerHTML = "";
+      }
+    };
+  }, []);
+
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="pt-20 relative overflow-hidden">
       {/* Simple background */}
       <div className="absolute inset-0 bg-gray-900/5 pointer-events-none"></div>
 
@@ -217,7 +306,7 @@ export function MarketOverview() {
             viewport={{ once: true }}
           >
             <div className="glass-card-modern-v3 border border-gray-700/20 shadow-lg relative overflow-hidden">
-              <div ref={containerRef} className="w-full h-[550px]"></div>
+              <div id="tradingview-widget" ref={containerRef} className="w-full h-[550px] overflow-hidden"></div>
             </div>
           </motion.div>
 
@@ -242,13 +331,18 @@ export function MarketOverview() {
                   viewport={{ once: true }}
                   className="p-5 rounded-xl bg-gray-800/10 border border-gray-700/20 transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div>
-                    <h4 className="text-xl font-semibold mb-2 text-blue-400">
-                      Real-Time Analysis
-                    </h4>
-                    <p className="text-muted-foreground">
-                      Access professional-grade charts with advanced technical indicators to make informed trading decisions.
-                    </p>
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 rounded-full bg-gray-800/30">
+                      <LineChart className="h-5 w-5 text-gray-900" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold mb-2 text-blue-400">
+                        Real-Time Analysis
+                      </h4>
+                      <p className="text-muted-foreground">
+                        Access professional-grade charts with advanced technical indicators to make informed trading decisions.
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
 
@@ -259,13 +353,18 @@ export function MarketOverview() {
                   viewport={{ once: true }}
                   className="p-5 rounded-xl bg-gray-800/10 border border-gray-700/20 transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div>
-                    <h4 className="text-xl font-semibold mb-2 text-blue-400">
-                      Multi-Asset Coverage
-                    </h4>
-                    <p className="text-muted-foreground">
-                      Track forex pairs, cryptocurrencies, indices, and stocks all in one place with our comprehensive market overview.
-                    </p>
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 rounded-full bg-gray-800/30">
+                      <BarChart3 className="h-5 w-5 text-gray-900" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold mb-2 text-blue-400">
+                        Multi-Asset Coverage
+                      </h4>
+                      <p className="text-muted-foreground">
+                        Track forex pairs, cryptocurrencies, indices, and stocks all in one place with our comprehensive market overview.
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
 
@@ -276,18 +375,28 @@ export function MarketOverview() {
                   viewport={{ once: true }}
                   className="p-5 rounded-xl bg-gray-800/10 border border-gray-700/20 transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div>
-                    <h4 className="text-xl font-semibold mb-2 text-blue-400">
-                      Trading Opportunities
-                    </h4>
-                    <p className="text-muted-foreground">
-                      Identify potential trading setups across multiple timeframes and asset classes to diversify your strategy.
-                    </p>
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 rounded-full bg-gray-800/30">
+                      <TrendingUp className="h-5 w-5 text-gray-900" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold mb-2 text-blue-400">
+                        Trading Opportunities
+                      </h4>
+                      <p className="text-muted-foreground">
+                        Identify potential trading setups across multiple timeframes and asset classes to diversify your strategy.
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               </div>
             </div>
           </motion.div>
+        </div>
+
+        {/* Ticker widget at the bottom of the section */}
+        <div className="mt-8">
+          <div ref={tickerRef} className="w-full overflow-hidden"></div>
         </div>
       </div>
     </section>

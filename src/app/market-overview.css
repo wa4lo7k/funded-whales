@@ -18,3 +18,22 @@
     opacity: 0.5;
   }
 }
+
+/* Remove padding from TradingView widget */
+.tradingview-widget-container,
+.tradingview-widget-container__widget {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Fix for the bottom padding in TradingView widget */
+iframe[src*="tradingview.com"] {
+  margin-bottom: -8px !important;
+}
+
+/* Ticker tape widget styles */
+.tradingview-widget-container iframe[src*="embed-widget-ticker-tape"] {
+  margin-bottom: 0 !important;
+  height: 46px !important;
+}
